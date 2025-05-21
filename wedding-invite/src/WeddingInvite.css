@@ -1,0 +1,155 @@
+.invite-section {
+    height: 100vh;
+    background: url('https://static.tildacdn.com/tild6633-6264-4639-b261-613565363838/Pasalic_Studio.jpeg') center/cover no-repeat;
+    position: relative;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+  }
+  
+  /* Белый центральный прямоугольный блок */
+  .center-mask {
+    position: relative;
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .invite-box {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* ===== Дата ===== */
+  .date-block {
+    position: absolute;
+    top: 140px;
+    left: 30px;
+    text-align: center;
+  }
+  
+  .date-text {
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+  }
+  
+  .date-line {
+    width: 1px;
+    height: 90px;
+    background: #000;
+    margin: 10px auto 0;
+  }
+  
+  .initials-block {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  
+  .initial {
+    font-size: 32px;
+    font-weight: bold;
+    animation: swapIn 2s ease forwards;
+    opacity: 0;
+  }
+  
+  .initial-k {
+    animation-delay: 0s;
+    transform: translateX(50px);
+  }
+  
+  .initial-v {
+    animation-delay: 0s;
+    transform: translateX(-50px);
+  }
+  
+  .initials-line {
+    position: absolute;
+    top: 1;
+    right: 30px; 
+    height: 70px;
+    width: 1px;
+    background-color: #000;
+  }
+  
+  /* ===== Контент ===== */
+  .content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 60px;
+    text-align: center;
+  }
+  
+  .main-title {
+    font-size: 44px;
+    font-weight: bold;
+    margin: 40px 0 20px;
+  }
+  
+  .subtitle {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  
+  .hint {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .music-toggle {
+    width: 50px;
+    margin: 10px auto 20px;
+    cursor: pointer;
+  }
+  
+  .music-toggle img {
+    width: 100%;
+    transition: opacity 0.3s ease;
+  }
+  
+  .bottom-text {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 600px;
+  }
+  
+  /* ===== Анимации ===== */
+  .fade-all {
+    opacity: 0;
+    animation: fadeAll 1.6s ease-in-out forwards;
+  }
+  
+  @keyframes fadeAll {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes swapIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
