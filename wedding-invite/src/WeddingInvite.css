@@ -33,7 +33,7 @@
   /* ===== Дата ===== */
   .date-block {
     position: absolute;
-    top: 140px;
+    top: 220px;
     left: 30px;
     text-align: center;
   }
@@ -61,8 +61,8 @@
   }
   
   .initial {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 400;
     animation: swapIn 2s ease forwards;
     opacity: 0;
   }
@@ -80,7 +80,7 @@
   .initials-line {
     position: absolute;
     top: 1;
-    right: 30px; 
+    right: 25px; 
     height: 70px;
     width: 1px;
     background-color: #000;
@@ -97,20 +97,23 @@
   }
   
   .main-title {
-    font-size: 44px;
-    font-weight: bold;
-    margin: 40px 0 20px;
+    font-size: 40px;
+    font-weight: 100; /* чуть выразительнее */
+    margin: 70px 0 150px;
   }
   
   .subtitle {
-    font-size: 26px;
-    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: 100; /* жирный как на втором примере */
+    margin-bottom: 30px;
   }
   
-  .hint {
-    font-size: 16px;
-    margin-bottom: 20px;
+  .hint,
+  .bottom-text {
+    font-weight: 400;
   }
+  
+  
   
   .music-toggle {
     width: 50px;
