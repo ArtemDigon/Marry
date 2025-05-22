@@ -1,158 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
 .invite-section {
-    height: 100vh;
-    background: url('https://static.tildacdn.com/tild6633-6264-4639-b261-613565363838/Pasalic_Studio.jpeg') center/cover no-repeat;
+  height: 100vh;
+  background: url('https://static.tildacdn.com/tild6633-6264-4639-b261-613565363838/Pasalic_Studio.jpeg') center/cover no-repeat;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  overflow: auto;
+}
+
+.g-recaptcha {
+  transform: scale(0.85); /* уменьшение размера */
+  transform-origin: 0 0;
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+
+.center-mask {
     position: relative;
-    font-family: 'Georgia', serif;
-    overflow: hidden;
-  }
-  
-  /* Белый центральный прямоугольный блок */
-  .center-mask {
-    position: relative;
-    width: 700px;
-    height: 100%;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 600px;
+    min-height: 100vh;
+    margin: 20px auto 20px; /* ⬅️ сверху и снизу по 20px */
+    background-color: rgba(180, 220, 250, 0.8);
     backdrop-filter: blur(4px);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
   
-  .invite-box {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
+
+.invite-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.date-block {
+  position: absolute;
+  top: 200px;
+  left: 110px;
+  text-align: center;
+}
+
+.date-text {
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+
+.date-line {
+  width: 1px;
+  height: 100px;
+  background: #000;
+  margin: 5px auto 0;
+}
+
+.initials-block {
+  position: absolute;
+  top: 80px;
+  right: 130px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.initial {
+  font-size: 20px;
+  font-weight: 400;
+  animation: swapIn 2s ease forwards;
+  opacity: 0;
+}
+
+.initial-k {
+  animation-delay: 0s;
+  transform: translateX(50px);
+}
+
+.initial-v {
+  animation-delay: 0s;
+  transform: translateX(-50px);
+}
+
+.section-divider {
+    height: 1px;
+    width: 80%; /* или 90% — зависит от желаемой длины */
+    background-color: #000;
+    margin: 40px 0;
   }
   
-  /* ===== Дата ===== */
-  .date-block {
+  
+  .section-divider.left {
+    align-self: flex-start;
+  }
+  
+  .section-divider.right {
+    align-self: flex-end;
+  }
+  
+
+  .initials-line {
     position: absolute;
-    top: 220px;
-    left: 30px;
+    top: 0px;
+    left: 450px; /* чем меньше — тем левее */
+    height: calc(60vh / 2);
+    width: 1px;
+    background-color: #000;
+    z-index: 0;
+  }
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 70px 0 150px;
+}
+
+.subtitle {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.survey-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .survey-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .arrow-down {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .survey-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  
+  
+  .survey-form fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  .survey-form input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0; /* 🔄 Убираем скругления */
+    background: transparent; /* 🔄 Прозрачный фон */
+    padding: 8px 0;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    box-shadow: none; /* 🔄 Убираем любые внутренние тени */
+    -webkit-appearance: none; /* 🔄 Убираем iOS стили */
+    appearance: none;
+  }
+  
+  
+
+  .survey-form label {
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .submit-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #e0e8ff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #cddfff;
+  }
+  
+  .contacts {
+    margin-top: 40px;
+  }
+  
+  .contacts-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+
+.pretty-map-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: rgba(180, 220, 250, 0.3);
+    border: 1px solid #4a90e2;
+    border-radius: 30px;
+    color: #003366;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pretty-map-button:hover {
+    background-color: rgba(180, 220, 250, 0.6);
+    color: #000;
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+
+.smalltitle {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 30px;
     text-align: center;
   }
-  
-  .date-text {
-    font-size: 28px;
-    line-height: 1.05;
-    letter-spacing: -0.5px;
-  }
-  
-  .date-line {
-    width: 1px;
-    height: 90px;
-    background: #000;
-    margin: 10px auto 0;
-  }
-  
-  .initials-block {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: flex;
-    align-items: flex-end;
-    gap: 12px;
-  }
-  
-  .initial {
-    font-size: 30px;
-    font-weight: 400;
-    animation: swapIn 2s ease forwards;
+
+.hint,
+.bottom-text {
+  font-weight: 100;
+}
+
+.music-toggle {
+  width: 50px;
+  margin: 10px auto 20px;
+  cursor: pointer;
+}
+
+.music-toggle img {
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-text {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Анимации */
+.fade-all {
+  opacity: 0;
+  animation: fadeAll 1.6s ease-in-out forwards;
+}
+
+@keyframes fadeAll {
+  from {
     opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .initial-k {
-    animation-delay: 0s;
-    transform: translateX(50px);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .initial-v {
-    animation-delay: 0s;
-    transform: translateX(-50px);
+}
+
+@keyframes swapIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 🔻 Адаптивная вёрстка для экранов до 768px */
+@media (max-width: 768px) {
+  .center-mask {
+    width: 65%; /* было 65% */
+    padding: 0px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    margin: 30px 0 60px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .bottom-text {
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  .date-block {
+    top: 120px;
+    left: 5%;
+    transform: translateX(-50%);
+  }
+
+  .initials-block {
+    top: 40px;
+    right: auto;
+    left: 80%;
+    transform: translateX(-50%);
+    gap: 8px;
+  }
+
+  .initial {
+    font-size: 16px;
+  }
+
+  .calendar-heart {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 80%;
   }
   
   .initials-line {
     position: absolute;
-    top: 1;
-    right: 25px; 
-    height: 70px;
+    top: 0px;
+    left: 222px; /* чем меньше — тем левее */
+    height: calc(30vh / 2);
     width: 1px;
     background-color: #000;
+    z-index: 0;
+  }
+
+  
+  .survey-form input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 0.1px solid #000;
+    border-radius: 0; /* 🔄 Убираем скругления */
+    background: transparent; /* 🔄 Прозрачный фон */
+    padding: 6px 0;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    box-shadow: none; /* 🔄 Убираем любые внутренние тени */
+    -webkit-appearance: none; /* 🔄 Убираем iOS стили */
+    appearance: none;
   }
   
-  /* ===== Контент ===== */
-  .content-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 60px;
+
+  .survey-form {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .pretty-map-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .contacts-title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
     text-align: center;
   }
-  
+
   .main-title {
-    font-size: 40px;
-    font-weight: 100; /* чуть выразительнее */
-    margin: 70px 0 150px;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 30px 0 150px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 8px 14px;
+  }
+
+ .bottom-text {
+   font-weight: 100;
+ }
+
+  .calendar-img-block {
+    width: 90%;
+  }
+  .section-divider-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
   
+  .section-divider {
+    height: 1px;
+    width: 80%;
+    background-color: #000;
+    margin: 20px 0;
+  }
+
   .subtitle {
     font-size: 25px;
-    font-weight: 100; /* жирный как на втором примере */
-    margin-bottom: 30px;
-  }
-  
-  .hint,
-  .bottom-text {
     font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
   }
-  
-  
-  
-  .music-toggle {
-    width: 50px;
-    margin: 10px auto 20px;
-    cursor: pointer;
+
+  .survey-section {
+    text-align: center;
+    margin-top: 40px;
+    width: 80%;
+    max-width: 540px; /* чтобы не упирался в края */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
-  
-  .music-toggle img {
+
+  .survey-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+    text-align: left;
     width: 100%;
-    transition: opacity 0.3s ease;
+    box-sizing: border-box;
   }
   
-  .bottom-text {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
+
+  survey-form input[type="text"] {
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .g-recaptcha {
+    transform: scale(0.55);
   }
   
-  /* ===== Анимации ===== */
-  .fade-all {
-    opacity: 0;
-    animation: fadeAll 1.6s ease-in-out forwards;
-  }
-  
-  @keyframes fadeAll {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes swapIn {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
+}
+
