@@ -1,52 +1,44 @@
 .calendar-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-    background: none;
-    background-color: transparent;
+  width: 150%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  background: none;
+  background-color: transparent;
+  overflow: hidden; /* 🔒 ограничить область */
+}
+
+.calendar-img-block {
+  position: relative;
+  width: 90%;          /* ⬅️ подстраиваемся под центральный блок */
+  max-width: 400px;
+  background: none;
+}
+
+.calendar-background {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.calendar-heart-png {
+  position: absolute;
+  top: 57.5%;
+  left: 62%;
+  width: 40px;
+  height: 35px;
+  animation: pulse 2.0s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .calendar-img-block {
-    position: relative;
-    width: 400px;
-    max-width: 90%;
-    background: none;
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
   }
-  
-  .calendar-background {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    background: none;
-  }
-  
-  .calendar-heart-png {
-    position: absolute;
-    top: 57.5%;
-    left: 63%;
-    width: 35px;
-    height: 35px;
-    animation: pulse 2.0s ease-in-out infinite;
-    pointer-events: none;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.4);
-      opacity: 0.5;
-    }
-  }
-  @media (max-width: 768px) {
-    .calendar-heart-png {
-      top: 57%;
-      left: 62%;
-      width: 24px;
-      height: 24px;
-    }
-  }
-  
+}
+

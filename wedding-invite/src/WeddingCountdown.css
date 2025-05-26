@@ -1,0 +1,36 @@
+.countdown-wrapper {
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
+                url('https://optim.tildacdn.com/tild3632-3733-4331-b436-636364333932/-/format/webp/Real_Wedding___Yeons.jpeg.webp') center/cover no-repeat;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+  }
+  
+  .countdown-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .countdown-segment {
+    text-align: center;
+  }
+  
+  .number {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  .label {
+    font-size: 16px;
+    margin-top: 5px;
+    display: block;
+  }
+  

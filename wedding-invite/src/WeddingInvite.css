@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
 
 .invite-section {
-  height: 100vh;
-  background: url('https://static.tildacdn.com/tild6633-6264-4639-b261-613565363838/Pasalic_Studio.jpeg') center/cover no-repeat;
+  min-height: 100vh;
+  background: url('https://static.tildacdn.com/tild6633-6264-4639-b261-613565363838/Pasalic_Studio.jpeg') center center / cover no-repeat scroll;
   position: relative;
   font-family: 'Cormorant Garamond', serif;
-  overflow: auto;
+  overflow: hidden;  /* Убираем остаточные прокрутки */
 }
+
+
 
 .g-recaptcha {
   transform: scale(0.85); /* уменьшение размера */
@@ -16,13 +18,19 @@
   display: block;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 
 .center-mask {
     position: relative;
-    width: 600px;
-    min-height: 100vh;
-    margin: 20px auto 20px; /* ⬅️ сверху и снизу по 20px */
-    background-color: rgba(180, 220, 250, 0.8);
+    width: 80%;
+    min-height: 100%;
+    margin: 20px auto 0px; /* ⬅️ сверху и снизу по 20px */
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(4px);
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-left: 1px solid #eee;
@@ -52,16 +60,26 @@
 }
 
 .date-text {
-  font-size: 28px;
-  line-height: 1.05;
+  font-size: 70px;
+  line-height: 1.00;
   letter-spacing: -0.5px;
+  margin-top: 100px;   
+  margin-left: -15px; 
 }
 
 .date-line {
   width: 1px;
-  height: 100px;
+  height: 250px;
   background: #000;
-  margin: 5px auto 0;
+  margin-top: 0px;   
+  margin-left: 0px; 
+}
+
+.hint,
+.bottom-text {
+  
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .initials-block {
@@ -74,7 +92,7 @@
 }
 
 .initial {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
   animation: swapIn 2s ease forwards;
   opacity: 0;
@@ -105,17 +123,7 @@
   .section-divider.right {
     align-self: flex-end;
   }
-  
 
-  .initials-line {
-    position: absolute;
-    top: 0px;
-    left: 450px; /* чем меньше — тем левее */
-    height: calc(60vh / 2);
-    width: 1px;
-    background-color: #000;
-    z-index: 0;
-  }
 
 .content-block {
   display: flex;
@@ -127,15 +135,41 @@
 }
 
 .main-title {
-  font-size: 40px;
+  font-size: 100px;
   font-weight: 400;
-  margin: 70px 0 150px;
+  margin: 0px 0px;
 }
 
-.subtitle {
-  font-size: 25px;
+.conten-title-end-more {
+  font-size: 40px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin: -10px 0 -10px;
+}
+
+.conten-title-end {
+  font-size: 65px;
+  font-weight: 550;
+  margin: 20px 0 20px;
+  line-height: 50px;
+  word-spacing: -5px; /* ⬅️ уменьшает расстояние между словами */
+}
+
+
+.subtitle {
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  margin-top: 400px;   
+  margin-left: px; 
+  text-align: center;
+}
+
+.subtitle-plan {
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  margin-top: 100px;   
+  margin-left: px; 
   text-align: center;
 }
 
@@ -212,8 +246,9 @@
   }
   
   .contacts-title {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 10px;
+    margin-left: 30px;
   }
   
 
@@ -241,16 +276,13 @@
   
 
 .smalltitle {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     margin-bottom: 30px;
     text-align: center;
   }
 
-.hint,
-.bottom-text {
-  font-weight: 100;
-}
+
 
 .music-toggle {
   width: 50px;
@@ -296,27 +328,19 @@
 }
 
 /* 🔻 Адаптивная вёрстка для экранов до 768px */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .center-mask {
-    width: 65%; /* было 65% */
+    width: 80%; /* было 65% */
     padding: 0px;
   }
 
-  .main-title {
-    font-size: 24px;
-    margin: 30px 0 60px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
 
   .bottom-text {
     font-size: 15px;
-    line-height: 1.4;
+    line-height: 1.9;
     padding: 0 10px;
   }
+
 
   .date-block {
     top: 120px;
@@ -325,15 +349,15 @@
   }
 
   .initials-block {
-    top: 40px;
+    top: 30px;
     right: auto;
-    left: 80%;
+    left: 70%;
     transform: translateX(-50%);
     gap: 8px;
   }
 
   .initial {
-    font-size: 16px;
+    font-size: 30px;
   }
 
   .calendar-heart {
@@ -343,16 +367,6 @@
     width: 80%;
   }
   
-  .initials-line {
-    position: absolute;
-    top: 0px;
-    left: 222px; /* чем меньше — тем левее */
-    height: calc(30vh / 2);
-    width: 1px;
-    background-color: #000;
-    z-index: 0;
-  }
-
   
   .survey-form input[type="text"] {
     width: 100%;
@@ -384,16 +398,10 @@
     font-size: 20px;
   }
 
-  .subtitle {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 40px;
-    text-align: center;
-  }
 
   .main-title {
-    font-size: 25px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 0;
     margin: 30px 0 150px;
   }
 
@@ -421,10 +429,13 @@
     margin: 20px 0;
   }
 
-  .subtitle {
-    font-size: 25px;
+
+  h2.subtitle {
+    font-size: 50px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    margin-top: 100px;   
+    margin-left: px; 
     text-align: center;
   }
 
@@ -457,6 +468,27 @@
   .g-recaptcha {
     transform: scale(0.55);
   }
+
+  .date-text {
+    font-size: 40px;
+    line-height: 1.00;
+    letter-spacing: -0.5px;
+    margin-top: 100px;   
+    margin-left: 40px; 
+  }
+  .date-line {
+    width: 1px;
+    height: 100px;
+    background: #000;
+    margin-top: 0px;   
+    margin-left: 55px; 
+  }
+  .hint,
+.bottom-text {
+  
+  font-size: 20px;
+  font-weight: 500;
+}
   
 }
 

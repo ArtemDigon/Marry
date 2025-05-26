@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import './Timeline.css';
 const events = [
-  { time: '15:30', label: 'Welcome зона', image: 'https://static.tildacdn.com/tild3065-6133-4838-a536-666562306131/_2.png', side: 'left' },
-  { time: '16:00', label: 'Выездная церемония', image: 'https://static.tildacdn.com/tild3038-3636-4361-b531-643438393737/photo.png', side: 'right' },
+  { time: '16:00', label: 'Сбор гостей', image: 'https://static.tildacdn.com/tild3065-6133-4838-a536-666562306131/_2.png', side: 'left' },
+  { time: '16:30', label: 'Выездная церемония', image: 'https://static.tildacdn.com/tild3038-3636-4361-b531-643438393737/photo.png', side: 'right' },
   { time: '17:00', label: 'Банкет', image: 'https://static.tildacdn.com/tild3866-3736-4636-a364-316239616466/photo.png', side: 'left' },
-  { time: '21:30', label: 'Торт', image: 'https://static.tildacdn.com/tild3165-6336-4631-a136-313334316532/photo.png', side: 'right' },
-  { time: '23:00', label: 'Завершение вечера', image: 'https://static.tildacdn.com/tild3665-3637-4637-b633-336136346132/_9.png', side: 'left' },
 ];
 
 const Timeline = () => {
